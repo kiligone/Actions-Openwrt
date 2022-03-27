@@ -13,7 +13,7 @@ name: Update Checker HC5962
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v21.02.1
+  REPO_BRANCH: openwrt-22.03
 
 on:
   workflow_dispatch:

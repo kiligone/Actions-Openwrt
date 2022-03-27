@@ -36,7 +36,7 @@ jobs:
       id: co
       run: |
         REPO_URL=https://github.com/openwrt/openwrt
-        REPO_TAG=v21.02.1
+        REPO_TAG=openwrt-22.03
         git clone -b $REPO_TAG $REPO_URL openwrt
         name_tag=${REPO_TAG}
         echo ::set-output name=release_tag::$name_tag
