@@ -12,7 +12,7 @@ jobs:
     - name: Clone Repository
       uses: actions/checkout@v2
       with:
-        ref: main
+        ref: openwrt-22.03
 
     - name: Init build dependencies
       env:
@@ -37,7 +37,8 @@ jobs:
       run: |
         REPO_URL=https://github.com/openwrt/openwrt
         REPO_TAG=openwrt-22.03
-        git clone -b $REPO_TAG $REPO_URL openwrt
+        git clone -b $REPO_TAG --depth 1 --single-branch $REPO_URL openwrt
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         name_tag=${REPO_TAG}
         echo ::set-output name=release_tag::$name_tag
         echo "::set-output name=date_tag::$(date +"%Y%m%d")"

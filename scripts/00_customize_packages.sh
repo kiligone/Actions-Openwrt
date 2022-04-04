@@ -2,42 +2,41 @@
 
 
 # Access Control
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-accesscontrol feeds/luci/applications/luci-app-accesscontrol
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-accesscontrol feeds/luci/applications/luci-app-accesscontrol
 ln -sf ../../../feeds/luci/applications/luci-app-accesscontrol ./package/feeds/luci/luci-app-accesscontrol
 
 
 # arpbind
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-arpbind feeds/luci/applications/luci-app-arpbind
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-arpbind feeds/luci/applications/luci-app-arpbind
 ln -sf ../../../feeds/luci/applications/luci-app-arpbind ./package/feeds/luci/luci-app-arpbind
 
 
 
 
 # DDNS
-svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/ddns-scripts_aliyun package/new/ddns-scripts_aliyun
-svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/ddns-scripts_dnspod package/new/ddns-scripts_dnspod
+svn export https://github.com/immortalwrt/packages/trunk/net/ddns-scripts_aliyun package/new/ddns-scripts_aliyun
+svn export https://github.com/immortalwrt/packages/trunk/net/ddns-scripts_dnspod package/new/ddns-scripts_dnspod
 
 # Filetransfer
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-filetransfer feeds/luci/applications/luci-app-filetransfer
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filetransfer feeds/luci/applications/luci-app-filetransfer
 ln -sf ../../../feeds/luci/applications/luci-app-filetransfer ./package/feeds/luci/luci-app-filetransfer
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/libs/luci-lib-fs feeds/luci/libs/luci-lib-fs
+svn export https://github.com/immortalwrt/luci/trunk/libs/luci-lib-fs feeds/luci/libs/luci-lib-fs
 ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
 
 
 
 # FullCone
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/fullconenat package/network/fullconenat
-wget -P target/linux/generic/hack-5.10/ https://github.com/immortalwrt/immortalwrt/raw/openwrt-21.02/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
+svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/fullconenat package/network/fullconenat
+wget -P target/linux/generic/hack-5.10/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/target/linux/generic/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch
 patch -d feeds/luci -p1 -i ../../../patches/fullconenat-luci.patch
-mkdir -p package/network/config/firewall/patches
-wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/openwrt-21.02/package/network/config/firewall/patches/fullconenat.patch
+wget -P package/network/config/firewall/patches/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/package/network/config/firewall/patches/fullconenat.patch
 
 
 #cpuinfo
 patch -d ./ -p1 -i ../patches/status.patch
 
 # IPSEC
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-ipsec-vpnd feeds/luci/applications/luci-app-ipsec-vpnd
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-ipsec-vpnd feeds/luci/applications/luci-app-ipsec-vpnd
 ln -sf ../../../feeds/luci/applications/luci-app-ipsec-vpnd ./package/feeds/luci/luci-app-ipsec-vpnd
 
 # OpenClash
@@ -54,11 +53,11 @@ svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash packa
 #svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/rtl88x2bu package/new/rtl88x2bu
 
 # Release Ram
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-ramfree feeds/luci/applications/luci-app-ramfree
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-ramfree feeds/luci/applications/luci-app-ramfree
 ln -sf ../../../feeds/luci/applications/luci-app-ramfree ./package/feeds/luci/luci-app-ramfree
 
 # Scheduled Reboot
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-autoreboot feeds/luci/applications/luci-app-autoreboot
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-autoreboot feeds/luci/applications/luci-app-autoreboot
 ln -sf ../../../feeds/luci/applications/luci-app-autoreboot ./package/feeds/luci/luci-app-autoreboot
 
 
@@ -75,14 +74,14 @@ sed -i '/builddir dependencies/a\$(curdir)/upx/compile := $(curdir)/ucl/compile'
 
 
 # vlmcsd
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-vlmcsd feeds/luci/applications/luci-app-vlmcsd
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-vlmcsd feeds/luci/applications/luci-app-vlmcsd
 ln -sf ../../../feeds/luci/applications/luci-app-vlmcsd ./package/feeds/luci/luci-app-vlmcsd
-svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/vlmcsd package/new/vlmcsd
+svn export https://github.com/immortalwrt/packages/trunk/net/vlmcsd package/new/vlmcsd
 
 
 
 # default settings and translation
-cp -rf ../default-settings package/new/learn-translate
+cp -rv ../default-settings package/new/
 
 
 
@@ -118,8 +117,8 @@ svn export https://github.com/rufengsuixing/luci-app-onliner/trunk package/new/l
 
 
 #luci-app-aliyundrive-webdav
-svn export https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav feeds/packages/net/aliyundrive-webdav
-ln -sf ../../../feeds/packages/net/aliyundrive-webdav ./package/feeds/packages/aliyundrive-webdav
+svn export https://github.com/coolsnowwolf/packages/trunk/multimedia/aliyundrive-webdav feeds/packages/multimedia/aliyundrive-webdav
+ln -sf ../../../feeds/packages/multimedia/aliyundrive-webdav ./package/feeds/packages/aliyundrive-webdav
 svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/luci-app-aliyundrive-webdav
 ln -sf ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./package/feeds/luci/luci-app-aliyundrive-webdav
 
@@ -132,7 +131,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos packa
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cifs-mount package/new/luci-app-cifs-mount
 svn export https://github.com/kiddin9/openwrt-packages/trunk/autoshare-samba package/new/autoshare-samba
 svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/automount package/new/automount
+svn export https://github.com/immortalwrt/immortalwrt/trunk/package/emortal/automount package/new/automount
 
 
 # max conntrack
