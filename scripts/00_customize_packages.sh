@@ -26,7 +26,7 @@ ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
 
 
 # FullCone
-svn export https://github.com/immortalwrt/immortalwrt/trunk/package/network/utils/fullconenat package/network/fullconenat
+svn export https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/fullconenat package/network/fullconenat
 wget -P target/linux/generic/hack-5.10/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/target/linux/generic/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch
 patch -d feeds/luci -p1 -i ../../../patches/fullconenat-luci.patch
 wget -P package/network/config/firewall/patches/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/package/network/config/firewall/patches/fullconenat.patch
@@ -131,7 +131,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos packa
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cifs-mount package/new/luci-app-cifs-mount
 svn export https://github.com/kiddin9/openwrt-packages/trunk/autoshare-samba package/new/autoshare-samba
 svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
-svn export https://github.com/immortalwrt/immortalwrt/trunk/package/emortal/automount package/new/automount
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/automount package/new/automount 
 
 
 # max conntrack
