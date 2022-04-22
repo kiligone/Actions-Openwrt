@@ -36,7 +36,7 @@ jobs:
       id: co
       run: |
         REPO_URL=https://github.com/openwrt/openwrt
-        REPO_TAG=openwrt-22.03
+        REPO_TAG=v22.03.0-rc1
         git clone -b $REPO_TAG --depth 1 --single-branch $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         name_tag=${REPO_TAG}
