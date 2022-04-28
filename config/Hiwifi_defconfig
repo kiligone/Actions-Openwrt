@@ -4717,7 +4717,7 @@ CONFIG_PACKAGE_luci-app-samba4=y
 # CONFIG_PACKAGE_luci-app-transmission is not set
 # CONFIG_PACKAGE_luci-app-travelmate is not set
 CONFIG_PACKAGE_luci-app-ttyd=y
-CONFIG_PACKAGE_luci-app-turboacc=y
+# CONFIG_PACKAGE_luci-app-turboacc is not set
 CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_OFFLOADING=y
 # CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_SHORTCUT_FE_DRV is not set
 # CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_SHORTCUT_FE is not set
@@ -5012,7 +5012,6 @@ CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-ttyd-vi is not set
 CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-ttyd-zh-tw is not set
-CONFIG_PACKAGE_luci-i18n-turboacc-zh-cn=y
 # CONFIG_PACKAGE_luci-i18n-upnp-ar is not set
 # CONFIG_PACKAGE_luci-i18n-upnp-bg is not set
 # CONFIG_PACKAGE_luci-i18n-upnp-bn is not set
@@ -5282,8 +5281,8 @@ CONFIG_PACKAGE_iptables-mod-tproxy=y
 # end of Select iptgeoip options
 
 # CONFIG_PACKAGE_miniupnpc is not set
-# CONFIG_PACKAGE_miniupnpd-iptables is not set
-CONFIG_PACKAGE_miniupnpd-nftables=y
+CONFIG_PACKAGE_miniupnpd=y
+# CONFIG_MINIUPNPD_IGDv2 is not set
 # CONFIG_PACKAGE_natpmpc is not set
 # CONFIG_PACKAGE_nftables-json is not set
 # CONFIG_PACKAGE_nftables-nojson is not set
@@ -5414,7 +5413,7 @@ CONFIG_PACKAGE_ddns-scripts_aliyun=y
 # CONFIG_PACKAGE_pdns-ixfrdist is not set
 # CONFIG_PACKAGE_pdns-recursor is not set
 # CONFIG_PACKAGE_pdns-tools is not set
-# CONFIG_PACKAGE_pdnsd-alt is not set
+CONFIG_PACKAGE_pdnsd-alt=y
 # CONFIG_PACKAGE_stubby is not set
 # CONFIG_PACKAGE_tor-hs is not set
 # CONFIG_PACKAGE_torsocks is not set

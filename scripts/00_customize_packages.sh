@@ -62,9 +62,9 @@ ln -sf ../../../feeds/luci/applications/luci-app-autoreboot ./package/feeds/luci
 
 
 
-# UPNP
-# rm -rf ./feeds/packages/net/miniupnpd
-# svn export https://github.com/coolsnowwolf/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
+#UPNP
+rm -rf ./feeds/packages/net/miniupnpd
+svn export https://github.com/coolsnowwolf/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
 
 # upx & ucl
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
