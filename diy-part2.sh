@@ -12,4 +12,4 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.31.5/g' package/base-files/files/bin/config_generate
-#sed -i 's/mkhash md5/echo ecc7515846d9a85938da6124aee98749/g' include/kernel-defaults.mk
+#sed -i 's/mkhash md5/echo 95238bfd570012d05891b8156dec4a28/g' include/kernel-defaults.mk
