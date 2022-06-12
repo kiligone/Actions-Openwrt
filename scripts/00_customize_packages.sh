@@ -78,7 +78,7 @@ svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/pac
 
 
 # Realtek 8192EU
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/rtl8192eu package/new/rtl8192eu
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/rtl8192eu package/new/rtl8192eu
 
 
 # Release Ram
