@@ -116,6 +116,7 @@ cp -rv ../default-settings package/new/
 
 #dnsforwarder
 svn export https://github.com/coolsnowwolf/packages/trunk/net/dnsforwarder feeds/packages/net/dnsforwarder
+ln -sf ../../../feeds/packages/net/dnsforwarder ./package/feeds/packages/dnsforwarder
 
 #dnsproxy
 svn export https://github.com/kiddin9/openwrt-packages/trunk/dnsproxy package/new/dnsproxy

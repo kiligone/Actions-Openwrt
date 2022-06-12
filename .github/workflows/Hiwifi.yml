@@ -12,7 +12,7 @@ jobs:
     - name: Clone Repository
       uses: actions/checkout@v2
       with:
-        ref: openwrt-22.03
+        ref: main
 
     - name: Init build dependencies
       env:
