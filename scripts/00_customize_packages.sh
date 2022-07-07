@@ -42,8 +42,13 @@ svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/pac
 patch -d ./ -p1 -i ../patches/status.patch
 
 # IPSEC
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-ipsec-vpnd feeds/luci/applications/luci-app-ipsec-vpnd
-ln -sf ../../../feeds/luci/applications/luci-app-ipsec-vpnd ./package/feeds/luci/luci-app-ipsec-vpnd
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ipsec-server feeds/luci/applications/luci-app-ipsec-server
+ln -sf ../../../feeds/luci/applications/luci-app-ipsec-server ./package/feeds/luci/luci-app-ipsec-server
+
+
+# docker
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-docker package/new/luci-app-docker
+
 
 # Kernel: fix IPv6 package drop when using software flow offload
 curl -sSL https://github.com/openwrt/openwrt/pull/9940.patch | patch -p1
