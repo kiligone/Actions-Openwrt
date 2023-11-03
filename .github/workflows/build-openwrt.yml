@@ -145,10 +145,8 @@ jobs:
       run: |
         cp ../config/${{ steps.var.outputs.device}}_defconfig .config
         make defconfig
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
-
+        chmod +x ../diy-part2.sh
+        /bin/bash ../diy-part2.sh
 
 
     - name: Make Download
