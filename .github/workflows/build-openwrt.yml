@@ -141,6 +141,7 @@ jobs:
 
 
     - name: Load custom configuration
+      working-directory: ./openwrt
       run: |
         cp ../config/${{ steps.var.outputs.device}}_defconfig .config
         make defconfig
