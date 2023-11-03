@@ -12,11 +12,11 @@ ln -sf ../../../feeds/luci/applications/luci-app-arpbind ./package/feeds/luci/lu
 
 
 # AutoCore
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-23.05/package/emotal/autocore package/new/autocore
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-23.05/package/emortal/autocore package/new/autocore
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-23.05/package/utils/mhz package/new/mhz
 rm -rf feeds/luci/modules/luci-base
 svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/modules/luci-base feeds/luci/modules/luci-base
-rm-rf feeds/luci/modules/luci-mod-status
+rm -rf feeds/luci/modules/luci-mod-status
 svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/modules/luci-mod-status feeds/luci/modules/luci-mod-status
 
 
