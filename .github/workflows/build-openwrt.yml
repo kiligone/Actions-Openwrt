@@ -142,7 +142,7 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        copy ../config/${{ steps.var.output.device}}_defconfig .config
+        cp ../config/${{ steps.var.outputs.device}}_defconfig .config
         make defconfig
         chmod +x $DIY_P2_SH
         cd openwrt
