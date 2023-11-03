@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        target: [HC5962,ax6000]
+        target: [HC5962,AX6000]
 
     steps:
     - name: Checkout
@@ -90,12 +90,12 @@ jobs:
             _release_tag=snapshot-r$(date +%g.%j)
             _prerelease=true
             ;;
-          23.05)
+          openwrt-23.05)
             _release_tag=$(git tag --sort=taggerdate --list 'v23.*' | tail -1)
             git checkout $_release_tag
             _prerelease=false
             ;;
-          22.03)
+          openwrt-22.03)
             _release_tag=$(git tag --sort=taggerdate --list 'v22.*' | tail -1)
             git checkout $_release_tag
             _prerelease=false
@@ -105,7 +105,7 @@ jobs:
             ;;
         esac
         case ${{ matrix.target }} in
-          HC5962)   _device=HIWIFI            ;;
+          HC5962)   _device=Hiwifi            ;;
           AX6000)   _device=AX6000           ;;
           *)        echo "wrong devices"      ;;
         esac
@@ -128,19 +128,19 @@ jobs:
       working-directory: ./openwrt
       run: |
         cp ../scripts/00_customize_packages.sh .
-        /bin/bash 00_customization_packages.sh
+        /bin/bash 00_customize_packages.sh
 
     - name: Convert Translation
       working-directory: ./openwrt
       run: |
         cp ../scripts/01_convert_translation.sh .
-        /bin/bash 02_convert_translation.sh
+        /bin/bash 01_convert_translation.sh
 
     - name: Add ACL
       working-directory: ./openwrt
       run: |
         cp ../scripts/02_create_acl_for_luci.sh .
-        /bin/bash 03_create_acl_for_luci.sh -a
+        /bin/bash 02_create_acl_for_luci.sh -a
 
 
     - name: Load custom configuration
