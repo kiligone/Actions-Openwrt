@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        target: [HC5962,AX6000]
+        target: [AX6000]
 
     steps:
     - name: Checkout
