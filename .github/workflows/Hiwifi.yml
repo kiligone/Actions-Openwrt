@@ -56,6 +56,7 @@ jobs:
           AX6000)   _device=AX6000           ;;
           *)        echo "wrong devices"      ;;
         esac
+        echo "device=$_device" >> $GITHUB_OUTPUT
     
     - name: Feeds update
       working-directory: ./openwrt
