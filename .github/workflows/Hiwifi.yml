@@ -1,4 +1,4 @@
-name: Hiwifi-HC5962
+name: OpenWrt-21.03
 
 on:
   repository_dispatch:
@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        target: [AX6000, HC5962]
     steps:
     - name: Clone Repository
       uses: actions/checkout@v2
@@ -42,6 +45,18 @@ jobs:
         name_tag=${REPO_TAG}
         echo ::set-output name=release_tag::$name_tag
         echo "::set-output name=date_tag::$(date +"%Y%m%d")"
+    
+    
+    - name: Get variable
+      working-directory: ./openwrt
+      id: var
+      run: |
+        case ${{ matrix.target }} in
+          HC5962)   _device=Hiwifi            ;;
+          AX6000)   _device=AX6000           ;;
+          *)        echo "wrong devices"      ;;
+        esac
+    
     - name: Feeds update
       working-directory: ./openwrt
       run: |
@@ -70,7 +85,7 @@ jobs:
     - name: Make Config
       working-directory: ./openwrt
       run: |
-        cp ../config/Hiwifi_defconfig .config
+        cp ../config/{{ step.var.output.device}}_defconfig .config
         make defconfig
         chmod +x ../diy-part2.sh
         /bin/bash ../diy-part2.sh
@@ -116,8 +131,8 @@ jobs:
     - name: Assemble Artifact
       run: |
         rm -rf ./artifact
-        ls openwrt/bin/targets/ramips/mt7621/
-        mv openwrt/bin/targets/ramips/mt7621 ./artifact
+        ls openwrt/bin/targets/ramips/*/
+        mv openwrt/bin/targets/ramips/* ./artifact
         pushd artifact
         cat config.buildinfo
         rm -rf packages *.buildinfo *.manifest *kernel.bin sha256sums
