@@ -101,10 +101,8 @@ rm -rf ./feeds/packages/net/miniupnpd
 svn export https://github.com/coolsnowwolf/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
 
 # upx & ucl
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ucl tools/ucl
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/upx tools/upx
-sed -i '/builddir dependencies/i\tools-y += ucl upx' tools/Makefile
-sed -i '/builddir dependencies/a\$(curdir)/upx/compile := $(curdir)/ucl/compile' tools/Makefile
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ucl package/new/ucl
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/upx package/new/upx
 
 
 # vlmcsd
@@ -163,7 +161,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-nginx-mana
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cifs-mount package/new/luci-app-cifs-mount
 svn export https://github.com/kiddin9/openwrt-packages/trunk/autoshare-samba package/new/autoshare-samba
 svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/automount package/new/automount 
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/automount package/new/automount
+curl -sSL https://github.com/immortalwrt/immortalwrt/commit/2d32c19.patch | patch -p1 
 
 
 # max conntrack
