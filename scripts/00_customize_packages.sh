@@ -101,8 +101,8 @@ rm -rf ./feeds/packages/net/miniupnpd
 svn export https://github.com/coolsnowwolf/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
 
 # upx & ucl
-svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
-svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ucl tools/ucl
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/upx tools/upx
 sed -i '/builddir dependencies/i\tools-y += ucl upx' tools/Makefile
 sed -i '/builddir dependencies/a\$(curdir)/upx/compile := $(curdir)/ucl/compile' tools/Makefile
 
@@ -159,8 +159,6 @@ ln -sf ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./package/fe
 #nginxmanage
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-nginx-manager package/new/luci-app-nginx-manager
 
-#eqos
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos package/new/luci-app-eqos
 
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cifs-mount package/new/luci-app-cifs-mount
 svn export https://github.com/kiddin9/openwrt-packages/trunk/autoshare-samba package/new/autoshare-samba
