@@ -86,7 +86,7 @@ jobs:
     - name: Make Config
       working-directory: ./openwrt
       run: |
-        cp ../config/${{ step.var.output.device}}_defconfig .config
+        cp ../config/${{ steps.var.output.device }}_defconfig .config
         make defconfig
         chmod +x ../diy-part2.sh
         /bin/bash ../diy-part2.sh
