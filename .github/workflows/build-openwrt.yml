@@ -124,7 +124,7 @@ jobs:
     - name: Customize Packages
       working-directory: ./openwrt
       run: |
-        cp ../${{ steps.var.outputs.device }}_customization.sh
+        cp ../${{ steps.var.outputs.device }}_customization.sh .
         /bin/bash ${{ steps.var.outputs.device }}_customization.sh
         cp ../scripts/00_customize_packages.sh .
         /bin/bash 00_customize_packages.sh
