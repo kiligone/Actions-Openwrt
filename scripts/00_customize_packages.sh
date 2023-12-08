@@ -138,6 +138,10 @@ ln -sf ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./package/fe
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-nginx-manager package/new/luci-app-nginx-manager
 
 
+#autoshare-samba
+svn export https://github.com/kiddin9/openwrt-packages/trunk/autoshare-samba package/new/autoshare-samba
+
+
 
 
 
