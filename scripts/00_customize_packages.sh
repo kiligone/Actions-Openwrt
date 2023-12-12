@@ -40,8 +40,8 @@ svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-23.05/pac
 
 
 # Filetransfer
-svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/applications/luci-app-filetransfer feeds/luci/applications/luci-app-filetransfer
-ln -sf ../../../feeds/luci/applications/luci-app-filetransfer ./package/feeds/luci/luci-app-filetransfer
+#svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/applications/luci-app-filetransfer feeds/luci/applications/luci-app-filetransfer
+#ln -sf ../../../feeds/luci/applications/luci-app-filetransfer ./package/feeds/luci/luci-app-filetransfer
 svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/libs/luci-lib-fs feeds/luci/libs/luci-lib-fs
 ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
 
@@ -63,6 +63,10 @@ rm -rf ./package/network/config/firewall4
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-23.05/package/network/config/firewall4 package/network/config/firewall4
 # patch luci
 patch -d feeds/luci -p1 -i ../../../patches/fullconenat-luci.patch
+
+#upnp
+cp ../patches/miniupnpd_getifaddr.patch feeds/package/net/miniupnpd/patches 
+
 
 
 #mbedtls
