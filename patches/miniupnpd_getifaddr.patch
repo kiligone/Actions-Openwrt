@@ -1,16 +1,5 @@
-From cb5cce245433ba1782188e2e67028213958c2772 Mon Sep 17 00:00:00 2001
-From: kiligone <ow4867208@gmail.com>
-Date: Tue, 12 Dec 2023 23:36:01 +0800
-Subject: [PATCH] -
-
----
- miniupnpd/getifaddr.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/miniupnpd/getifaddr.c b/miniupnpd/getifaddr.c
-index f7268ab..6afdba7 100644
---- a/miniupnpd/getifaddr.c
-+++ b/miniupnpd/getifaddr.c
+--- a/getifaddr.c
++++ b/getifaddr.c
 @@ -309,7 +309,7 @@ addr_is_reserved(struct in_addr * addr)
  
  	for (i = 0; i < sizeof(reserved)/sizeof(reserved[0]); ++i) {
@@ -20,6 +9,4 @@ index f7268ab..6afdba7 100644
  	}
  
  	return 0;
--- 
-2.25.1
 
