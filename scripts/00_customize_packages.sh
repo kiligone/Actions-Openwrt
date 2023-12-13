@@ -64,8 +64,6 @@ svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-23.05/pac
 # patch luci
 patch -d feeds/luci -p1 -i ../../../patches/fullconenat-luci.patch
 
-#upnp
-cp ../patches/miniupnpd_getifaddr.patch feeds/packages/net/miniupnpd/patches 
 
 
 
