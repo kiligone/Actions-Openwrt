@@ -55,7 +55,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-docker pac
 
 
 # Kernel: fix IPv6 package drop when using software flow offload
-curl -sSL https://github.com/openwrt/openwrt/pull/9940.patch | patch -p1
+#curl -sSL https://github.com/openwrt/openwrt/pull/9940.patch | patch -p1
 
 
 # OpenClash
