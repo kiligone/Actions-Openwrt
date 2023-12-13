@@ -32,12 +32,10 @@ ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
 
 
 # FullCone
-rm -rf package/network/utils
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/network/utils package/network/utils
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/network/utils/fullconenat package/network/utils/
 wget -P target/linux/generic/hack-5.4/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-21.02/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
 patch -d feeds/luci -p1 -i ../../../patches/fullconenat-luci.patch
-rm -rf package/network/config/firewall
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/network/config/firewall package/network/config/firewall
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/network/config/firewall/patches package/network/config/firewall/
 
 
 # mbedtls
