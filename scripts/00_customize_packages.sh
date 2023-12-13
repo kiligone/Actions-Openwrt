@@ -41,8 +41,8 @@ svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/pac
 
 
 # mbedtls
-cp -f ../immortalwrt/package/libs/mbedtls/patches/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch package/libs/mbedtls/patches/
-cp -f ../patches/201-Camellia-block-cipher.patch package/libs/mbedtls/patches/
+wget -p package/libs/mbedtls/patches/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-21.02/package/libs/mbedtls/patches/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch
+wget -p package/libs/mbedtls/patches/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-21.02/package/libs/mbedtls/patches/200-config.patch
 
 #cpuinfo
 patch -d ./ -p1 -i ../patches/status.patch
