@@ -78,10 +78,6 @@ svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/pac
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/r8152 package/new/r8152
 
 
-# Realtek R8168
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/r8168 package/new/r8168
-
-
 # Realtek 8192EU
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/rtl8192eu package/new/rtl8192eu
 
@@ -167,6 +163,9 @@ curl -sSL https://github.com/immortalwrt/immortalwrt/commit/2d32c19.patch | patc
 
 # max conntrack
 sed -i 's,16384,65536,g' package/kernel/linux/files/sysctl-nf-conntrack.conf
+echo "net.netfilter.nf_conntrack_helper=1" >> package/kernel/linux/files/sysctl-nf-conntrack.conf
+echo "net.netfilter.nf_conntrack_buckets=16384" >> package/kernel/linux/files/sysctl-nf-conntrack.conf
+echo "net.netfilter.nf_conntrack_expect_max=16384" >> package/kernel/linux/files/sysctl-nf-conntrack.conf
 
 #theme
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-theme-edge package/new/luci-theme-edge
