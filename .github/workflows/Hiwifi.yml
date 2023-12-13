@@ -1,4 +1,4 @@
-name: OpenWrt-21.03
+name: OpenWrt-21.02
 
 on:
   repository_dispatch:

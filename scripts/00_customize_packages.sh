@@ -10,7 +10,13 @@ ln -sf ../../../feeds/luci/applications/luci-app-accesscontrol ./package/feeds/l
 svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-arpbind feeds/luci/applications/luci-app-arpbind
 ln -sf ../../../feeds/luci/applications/luci-app-arpbind ./package/feeds/luci/luci-app-arpbind
 
-
+#autocore
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/autocore package/new/autocore
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/utils/mhz package/utils/mhz
+rm -rf feeds/luci/modules/luci-base
+svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/modules/luci-base feeds/luci/modules/luci-base
+rm -rf feeds/luci/modules/luci-mod-status
+svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/modules/luci-mod-status feeds/luci/modules/luci-mod-status
 
 
 # DDNS
@@ -33,17 +39,17 @@ ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
 
 # FullCone
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/network/utils/fullconenat package/network/utils/fullconenat
-wget -P target/linux/generic/hack-5.4/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-21.02/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
+wget -P target/linux/generic/hack-5.4/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/v21.02.7/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
 patch -d feeds/luci -p1 -i ../../../patches/fullconenat-luci.patch
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/network/config/firewall/patches package/network/config/firewall/patches
+svn export https://github.com/immortalwrt/immortalwrt/tags/v21.02.7/package/network/config/firewall/patches package/network/config/firewall/patches
 
 
 # mbedtls
-wget -P package/libs/mbedtls/patches/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-21.02/package/libs/mbedtls/patches/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch
-wget -P package/libs/mbedtls/patches/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-21.02/package/libs/mbedtls/patches/200-config.patch
+wget -P package/libs/mbedtls/patches/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/v21.02.7/package/libs/mbedtls/patches/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch
+wget -P package/libs/mbedtls/patches/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/v21.02.7/package/libs/mbedtls/patches/200-config.patch
 
 #cpuinfo
-patch -d ./ -p1 -i ../patches/status.patch
+#patch -d ./ -p1 -i ../patches/status.patch
 
 # IPSEC
 svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ipsec-server feeds/luci/applications/luci-app-ipsec-server
@@ -65,25 +71,18 @@ svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash packa
 curl -sSL https://github.com/openwrt/openwrt/commit/efc8aff.patch | patch -p1
 
 
-# Realtek RTL8811CU/RTL8821CU
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/rtl8821cu package/new/rtl8821cu
 
-# Realtek RTL8812AU/21AU
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/rtl8812au-ac package/new/rtl8812au-ac
-
-# Realtek 8812BU/8822BU
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/rtl88x2bu package/new/rtl88x2bu
 
 # Realtek R8125
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/r8125 package/new/r8125
+svn export https://github.com/immortalwrt/immortalwrt/tags/v21.02.7/package/kernel/r8125 package/new/r8125
 
 
 # Realtek R8152
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/r8152 package/new/r8152
+svn export https://github.com/immortalwrt/immortalwrt/tags/v21.02.7/package/kernel/r8152 package/new/r8152
 
 
 # Realtek 8192EU
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/rtl8192eu package/new/rtl8192eu
+svn export https://github.com/immortalwrt/immortalwrt/tags/v21.02.7/package/kernel/rtl8192eu package/new/rtl8192eu
 
 
 # Release Ram
@@ -148,11 +147,7 @@ svn export https://github.com/rufengsuixing/luci-app-onliner/trunk package/new/l
 
 
 
-#luci-app-aliyundrive-webdav
-svn export https://github.com/coolsnowwolf/packages/trunk/multimedia/aliyundrive-webdav feeds/packages/multimedia/aliyundrive-webdav
-ln -sf ../../../feeds/packages/multimedia/aliyundrive-webdav ./package/feeds/packages/aliyundrive-webdav
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/luci-app-aliyundrive-webdav
-ln -sf ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./package/feeds/luci/luci-app-aliyundrive-webdav
+
 
 #nginxmanage
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-nginx-manager package/new/luci-app-nginx-manager
