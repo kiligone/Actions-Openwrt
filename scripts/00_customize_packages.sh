@@ -10,7 +10,13 @@ ln -sf ../../../feeds/luci/applications/luci-app-accesscontrol ./package/feeds/l
 svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-arpbind feeds/luci/applications/luci-app-arpbind
 ln -sf ../../../feeds/luci/applications/luci-app-arpbind ./package/feeds/luci/luci-app-arpbind
 
-
+#autocore
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/autocore package/new/autocore
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/utils/mhz package/utils/mhz
+rm -rf feeds/luci/modules/luci-base
+svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/modules/luci-base feeds/luci/modules/luci-base
+rm -rf feeds/luci/modules/luci-mod-status
+svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/modules/luci-mod-status feeds/luci/modules/luci-mod-status
 
 
 # DDNS
@@ -39,7 +45,7 @@ svn export https://github.com/immortalwrt/immortalwrt/tags/v21.02.3/package/netw
 
 
 #cpuinfo
-patch -d ./ -p1 -i ../patches/status.patch
+#patch -d ./ -p1 -i ../patches/status.patch
 
 # IPSEC
 svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ipsec-server feeds/luci/applications/luci-app-ipsec-server
@@ -166,7 +172,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cifs-mount
 svn export https://github.com/kiddin9/openwrt-packages/trunk/autoshare-samba package/new/autoshare-samba
 svn export https://github.com/kiddin9/openwrt-packages/trunk/pdnsd-alt package/new/pdnsd-alt
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/automount package/new/automount 
-
+curl -sSL https://github.com/immortalwrt/immortalwrt/commit/2d32c19.patch | patch -p1
 
 # max conntrack
 sed -i 's,16384,65536,g' package/kernel/linux/files/sysctl-nf-conntrack.conf
