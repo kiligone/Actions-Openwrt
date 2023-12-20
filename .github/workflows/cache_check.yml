@@ -1,0 +1,52 @@
+name: Fetch Cache
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "00 00 */6 * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        target: [HC5962, AX6000]
+        branch: [23.05, main]
+
+    steps:
+    - name: Clone Repository
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ matrix.branch }}
+
+    - name: Clone OpenWrt
+      run: |
+        git clone https://github.com/openwrt/openwrt
+
+    - name: Get variable
+      working-directory: ./openwrt
+      id: var
+      run: |
+        case ${{ matrix.branch }} in
+          openwrt-23.05)
+            _release_tag=$(git tag --sort=taggerdate --list 'v23.*' | tail -1)
+            git checkout $_release_tag
+            ;;
+          main)
+            _release_tag=v21.02.3
+            git checkout $_release_tag
+            ;;
+          *)
+            echo "Can't get local/upstream's branch/tags"
+            ;;
+        esac
+
+    - name: Get cache toolchain
+      uses: HiGarfield/cachewrtbuild@main
+      with:
+        prefix: ${{ github.workspace }}/openwrt
+        if [[ ${{ matrix.branch }} == "main" ]]; then
+          mixkey: "hiwifi_hc5962"
+        else
+          mixkey: ${{ matrix.target }}
+        skip_saving: 'true'
