@@ -45,9 +45,5 @@ jobs:
       uses: HiGarfield/cachewrtbuild@main
       with:
         prefix: ${{ github.workspace }}/openwrt
-        if [[ ${{matrix.branch}} == "main" ]]; then
-          _device=hiwifi_hc5962
-          mixkey: ${{_device}}
-        else
-          mixkey: ${{matrix.target}}
+        mixkey: ${{matrix.target}}
         skip_saving: 'true'
