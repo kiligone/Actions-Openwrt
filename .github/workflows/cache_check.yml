@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         target: [HC5962, AX6000]
-        branch: [openwrt-23.05, main]
+        branch: [openwrt-23.05]
 
     steps:
     - name: Clone Repository
@@ -30,10 +30,6 @@ jobs:
         case ${{ matrix.branch }} in
           openwrt-23.05)
             _release_tag=$(git tag --sort=taggerdate --list 'v23.*' | tail -1)
-            git checkout $_release_tag
-            ;;
-          main)
-            _release_tag=v21.02.3
             git checkout $_release_tag
             ;;
           *)
