@@ -1,4 +1,4 @@
-name: Fetch Cache 23.05
+name: Fetch Cache 21.02
 
 on:
   workflow_dispatch:
@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        target: [HC5962, AX6000]
-        branch: [openwrt-23.05]
+        target: [hiwifi_hc5962]
+        branch: [main]
 
     steps:
     - name: Clone Repository
@@ -31,6 +31,10 @@ jobs:
           openwrt-23.05)
             _release_tag=$(git tag --sort=taggerdate --list 'v23.*' | tail -1)
             git checkout $_release_tag
+            ;;
+          main)
+            _release_tag=$(git tag --sort=taggerdate --list 'v23.*' | tail -1)
+            git checkout v21.02.3
             ;;
           *)
             echo "Can't get local/upstream's branch/tags"
