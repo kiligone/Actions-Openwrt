@@ -42,4 +42,3 @@ jobs:
       with:
         prefix: ${{ github.workspace }}/openwrt
         mixkey: ${{ matrix.target }}
-        skip_saving: 'true'
