@@ -46,7 +46,8 @@ jobs:
       with:
         prefix: ${{ github.workspace }}/openwrt
         if [[ ${{matrix.branch}} == "main" ]]; then
-          mixkey: hiwifi_hc5962
+          _device=hiwifi_hc5962
+          mixkey: ${{_device}}
         else
           mixkey: ${{matrix.target}}
         skip_saving: 'true'
