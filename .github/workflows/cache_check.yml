@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         target: [HC5962, AX6000]
-        branch: [23.05, main]
+        branch: [openwrt-23.05, main]
 
     steps:
     - name: Clone Repository
