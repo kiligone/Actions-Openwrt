@@ -173,7 +173,6 @@ jobs:
 
         #清空缓存
         clean: false
-        
         prefix: ${{ github.workspace }}/openwrt
         mixkey: ${{ matrix.target }}
 
