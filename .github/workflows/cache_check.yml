@@ -38,7 +38,7 @@ jobs:
         esac
 
     - name: Get cache toolchain
-      uses: HiGarfield/cachewrtbuild@main
+      uses: klever1988/cachewrtbuild@main
       with:
         prefix: ${{ github.workspace }}/openwrt
         mixkey: ${{ matrix.target }}
