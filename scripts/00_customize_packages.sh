@@ -27,8 +27,8 @@ cp -rf ../lede/package/lean/ntfs3-mount package/new/
 cp -rf ../immortalwrt-luci/applications/luci-app-cpufreq package/new/
 
 # DDNS
-cp -rf ../immortalwrt-package/net/ddns-scripts_aliyun package/new/
-cp -rf ../immortalwrt-package/net/ddns-scripts_dnspod package/new/
+cp -rf ../immortalwrt-packages/net/ddns-scripts_aliyun package/new/
+cp -rf ../immortalwrt-packages/net/ddns-scripts_dnspod package/new/
 
 
 # dnsmasq
@@ -50,7 +50,7 @@ cp -rf ../lede/target/linux/generic/hack-5.15/982-add-bcm-fullconenat-support.pa
 cp -rf ../immortalwrt/package/network/utils/fullconenat-nft package/network/utils/
 # libnftnl
 rm -rf ./package/libs/libnftnl
-cp -rf ../immortalwrt/immortalwrt/package/libs/libnftnl package/libs/
+cp -rf ../immortalwrt/package/libs/libnftnl package/libs/
 # nftables
 rm -rf ./package/network/utils/nftables/
 cp -rf ../immortalwrt/package/network/utils/nftables package/network/utils/
