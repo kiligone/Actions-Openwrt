@@ -116,6 +116,7 @@ jobs:
 
     - name: Fetch Other repos
       run: |
+        chmod +x ../00_init.sh        
         ./scripts/00_init.sh other-repos 
     
     
