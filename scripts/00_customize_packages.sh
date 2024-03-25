@@ -131,7 +131,7 @@ git clone -b master --depth 1 --single-branch https://github.com/sundaqiang/open
 
 
 #autoshare-samba
-cp ../lede/package/lean/autoshare-samba package/new/
+cp ../lede/package/lean/autosamba package/new/
 
 
 
