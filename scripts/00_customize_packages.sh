@@ -129,11 +129,11 @@ git clone -b main --depth 1 --single-branch https://github.com/messense/aliyundr
 #nginxmanage
 git clone -b master --depth 1 --single-branch https://github.com/sundaqiang/openwrt-packages package/new/luci-app-nginx-manager
 rm -rf ./package/new/luci-app-nginx-manager/luci-app-nginx-manager/Makefile
-wget -O /package/new/luci-app-nginx-manager/luci-app-nginx-manager/Makefile 'https://raw.githubusercontent.com/kiddin9/openwrt-packages/master/luci-app-nginx-manager/Makefile'
+wget -O ./package/new/luci-app-nginx-manager/luci-app-nginx-manager/Makefile 'https://raw.githubusercontent.com/kiddin9/openwrt-packages/master/luci-app-nginx-manager/Makefile'
 
 
 #autoshare-samba
-cp ../lede/package/lean/autosamba package/new/
+cp -rf ../lede/package/lean/autosamba package/new/
 
 
 
