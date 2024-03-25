@@ -114,6 +114,12 @@ jobs:
         #echo "artifact=$_artifact_path" >> $GITHUB_OUTPUT
 
 
+    - name: Fetch Other repos
+      run: |
+        ./scripts/00_init.sh other-repos 
+    
+    
+    
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
