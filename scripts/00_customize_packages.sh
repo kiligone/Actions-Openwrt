@@ -118,7 +118,7 @@ cp -rf ../immortalwrt/package/emortal/ipv6-helper package/new/
 
 #uugamebooster
 cp -rf ../immortalwrt-luci/applications/luci-app-uugamebooster package/new/
-cp -f ../immortalwrt-packages/net/uugamebooster package/new/
+cp -rf ../immortalwrt-packages/net/uugamebooster package/new/
 
 
 
