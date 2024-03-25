@@ -30,15 +30,9 @@ define Package/default-settings
 	TITLE:=LuCI support for Default Settings
 	PKGARCH:=all
 	DEPENDS:= \
-		+kmod-macvlan \
-		+kmod-nft-fullcone \
-		+kmod-wireguard \
 		+libustream-mbedtls \
 		+luci \
 		+luci-compat \
-		+luci-proto-ipv6 \
-		+odhcp6c \
-		+odhcpd-ipv6only \
 		+zram-swap \
 		+@LUCI_LANG_zh_Hans
 endef
@@ -49,9 +43,6 @@ endef
 define Package/default-settings/install
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	$(INSTALL_BIN) ./files/zzz-default-settings $(1)/etc/uci-defaults/99-default-settings
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
-	po2lmo ./i18n/default.zh-cn.po $(1)/usr/lib/lua/luci/i18n/default.zh-cn.lmo
-	po2lmo ./i18n/more.zh-cn.po $(1)/usr/lib/lua/luci/i18n/more.zh-cn.lmo
 endef
 
 $(eval $(call BuildPackage,default-settings))
