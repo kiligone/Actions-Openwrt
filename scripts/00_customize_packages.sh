@@ -40,6 +40,8 @@ cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 #svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/applications/luci-app-filetransfer feeds/luci/applications/luci-app-filetransfer
 cp -rf ../immortalwrt-luci/applications/luci-app-filetransfer package/new/
 #ln -sf ../../../feeds/luci/applications/luci-app-filetransfer ./package/feeds/luci/luci-app-filetransfer
+#svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/libs/luci-lib-fs feeds/luci/libs/luci-lib-fs
+#ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
 cp -rf ../immortalwrt-luci/libs/luci-lib-fs package/new/
 
 
@@ -127,10 +129,7 @@ cp -rf ../immortalwrt-packages/net/uugamebooster package/new/
 #luci-app-aliyundrive-webdav
 git clone -b main --depth 1 --single-branch https://github.com/messense/aliyundrive-webdav package/new/aliyundrive-webdav
 
-#nginxmanage
-git clone -b master --depth 1 --single-branch https://github.com/sundaqiang/openwrt-packages package/new/luci-app-nginx-manager
-rm -rf ./package/new/luci-app-nginx-manager/luci-app-nginx-manager/Makefile
-wget -O ./package/new/luci-app-nginx-manager/luci-app-nginx-manager/Makefile 'https://raw.githubusercontent.com/kiddin9/openwrt-packages/master/luci-app-nginx-manager/Makefile'
+
 
 
 #autoshare-samba
