@@ -20,6 +20,7 @@ merge_package(){
 cp -rf ../immortalwrt-luci/applications/luci-app-accesscontrol package/new/
 
 
+
 # arpbind
 cp -rf ../immortalwrt-luci/applications/luci-app-arpbind package/new/
 
@@ -51,12 +52,12 @@ rm -rf package/network/services/dnsmasq
 cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 
 
-# Filetransfer
+# Filetransfer nginx-manager adguardhome
 #svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/applications/luci-app-filetransfer feeds/luci/applications/luci-app-filetransfer
 #ln -sf ../../../feeds/luci/applications/luci-app-filetransfer ./package/feeds/luci/luci-app-filetransfer
 #svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/libs/luci-lib-fs feeds/luci/libs/luci-lib-fs
 #ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
-merge_packag master https://github.com/kiddin9/openwrt-packages luci-app-filetransfer luci-app-nginx-manager
+merge_packag master https://github.com/kiddin9/openwrt-packages luci-app-filetransfer luci-app-nginx-manager adguardhome luci-app-adguardhome
 cp -rf ../immortalwrt-luci/libs/luci-lib-fs package/new/
 
 
