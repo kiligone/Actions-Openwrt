@@ -38,8 +38,9 @@ cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 
 # Filetransfer
 #svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/applications/luci-app-filetransfer feeds/luci/applications/luci-app-filetransfer
+cp -rf ../immortalwrt-luci/applications/luci-app-filetransfer package/new/
 #ln -sf ../../../feeds/luci/applications/luci-app-filetransfer ./package/feeds/luci/luci-app-filetransfer
-cp -rf ../immortalwrt-luci/libs/luci-lib-fs feeds/luci/libs/
+cp -rf ../immortalwrt-luci/libs/luci-lib-fs package/new/
 
 
 
