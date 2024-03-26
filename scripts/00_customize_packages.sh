@@ -57,6 +57,7 @@ cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 #ln -sf ../../../feeds/luci/applications/luci-app-filetransfer ./package/feeds/luci/luci-app-filetransfer
 #svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/libs/luci-lib-fs feeds/luci/libs/luci-lib-fs
 #ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
+rm -rf ./feeds/packages/net/adguardhome
 merge_packag master https://github.com/kiddin9/openwrt-packages luci-app-filetransfer luci-app-nginx-manager adguardhome luci-app-adguardhome
 cp -rf ../immortalwrt-luci/libs/luci-lib-fs package/new/
 
