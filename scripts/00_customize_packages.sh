@@ -1,4 +1,19 @@
 #!/bin/bash
+merge_package(){
+    # 参数1是分支名,参数2是库地址,参数3是子路径。所有文件下载到openwrt/package/openwrt-packages路径。
+    # 同一个仓库下载多个文件夹直接在后面跟文件名或路径，空格分开。
+    branch=$1 curl=$2 && shift 2
+    rootdir=$(pwd)
+    localdir=package/new
+    [ -d $localdir ] || mkdir -p $localdir
+    tmpdir=$(mktemp -d) || exit 1
+    git clone -b $branch --depth 1 --filter=blob:none --sparse $curl $tmpdir
+    cd $tmpdir
+    git sparse-checkout init --cone
+    git sparse-checkout set $@
+    mv -f $@ $rootdir/$localdir
+	cd $rootdir && rm -rf $tmpdir
+}
 
 
 # Access Control
@@ -41,6 +56,7 @@ cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 #ln -sf ../../../feeds/luci/applications/luci-app-filetransfer ./package/feeds/luci/luci-app-filetransfer
 #svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/libs/luci-lib-fs feeds/luci/libs/luci-lib-fs
 #ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
+merge_packag master https://github.com/kiddin9/openwrt-packages luci-app-filetransfer luci-app-nginx-manager
 cp -rf ../immortalwrt-luci/libs/luci-lib-fs package/new/
 
 
@@ -80,6 +96,12 @@ git clone -b master --depth 1 --single-branch https://github.com/NateLol/luci-ap
 
 # OpenClash
 git clone -b master --depth 1 --single-branch https://github.com/vernesong/OpenClash package/new/luci-app-openclash
+
+#smartdns
+rm -rf ./feeds/packages/net/smartdns
+rm -rf ./feeds/luci/applications/luci-app-smartdns
+git clone -b master --depth 1 --single-branch https://github.com/pymumu/luci-app-smartdns package/new/luci-app-smartdns
+git clone -b master --depth 1 --single-branch https://github.com/pymumu/openwrt-smartdns package/new/openwrt-smartdns
 
 
 # Realtek RTL8125/8125B/8126A
