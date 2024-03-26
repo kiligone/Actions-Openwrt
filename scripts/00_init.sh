@@ -33,28 +33,11 @@ __init_feeds() {
     ./openwrt/scripts/feeds update -a && ./openwrt/scripts/feeds install -a
 }
 
-__merge_package(){
-    # 参数1是分支名,参数2是库地址,参数3是子路径。所有文件下载到openwrt/package/openwrt-packages路径。
-    # 同一个仓库下载多个文件夹直接在后面跟文件名或路径，空格分开。
-    branch=$1 curl=$2 && shift 2
-    rootdir=$(pwd)
-    localdir=package/new
-    [ -d $localdir ] || mkdir -p $localdir
-    tmpdir=$(mktemp -d) || exit 1
-    git clone -b $branch --depth 1 --filter=blob:none --sparse $curl $tmpdir
-    cd $tmpdir
-    git sparse-checkout init --cone
-    git sparse-checkout set $@
-    mv -f $@ $rootdir/$localdir
-	cd $rootdir && rm -rf $tmpdir
-}
-
 case $1 in
     build_env)      __init_build_env    ;;
     openwrt)        __get_openwrt       ;;
     other-repos)    __get_other-repos   ;;
     feeds)          __init_feeds        ;;
-    package)        __merge_package     ;;
     *)              echo "input error"  ;;
 esac
 
