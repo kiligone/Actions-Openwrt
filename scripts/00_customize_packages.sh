@@ -59,7 +59,7 @@ cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 #svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/libs/luci-lib-fs feeds/luci/libs/luci-lib-fs
 #ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
 #merge_package master https://github.com/kiddin9/openwrt-packages luci-app-filetransfer luci-app-nginx-manager
-cp -rf ../immortalwrt-luci/libs/luci-lib-fs package/new/
+git clone https://github.com/DustReliant/luci-app-filetransfer.git package/new/luci-app-filetransfer 
 
 
 
@@ -157,7 +157,8 @@ cp -rf ../default-settings package/new/
 
 
 #autoshare-samba
-#cp -rf ../lede/package/lean/autosamba package/new/
+cp -rf ../lede/package/lean/autosamba package/new/
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-samba package/new/luci-app-samba
 
 
 
