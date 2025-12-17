@@ -17,7 +17,7 @@ merge_package(){
 
 
 # Access Control
-cp -rf ../immortalwrt-luci/applications/luci-app-accesscontrol package/new/
+#cp -rf ../immortalwrt-luci/applications/luci-app-accesscontrol package/new/
 
 
 
@@ -44,7 +44,7 @@ cp -rf ../immortalwrt-luci/applications/luci-app-cpufreq package/new/
 cp -rf ../immortalwrt/package/emortal/cpufreq package/new/
 
 # DDNS
-cp -rf ../immortalwrt-packages/net/ddns-scripts_aliyun package/new/
+#cp -rf ../immortalwrt-packages/net/ddns-scripts_aliyun package/new/
 cp -rf ../immortalwrt-packages/net/ddns-scripts_dnspod package/new/
 
 
@@ -58,7 +58,7 @@ cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 #ln -sf ../../../feeds/luci/applications/luci-app-filetransfer ./package/feeds/luci/luci-app-filetransfer
 #svn export https://github.com/immortalwrt/luci/branches/openwrt-23.05/libs/luci-lib-fs feeds/luci/libs/luci-lib-fs
 #ln -sf ../../../feeds/luci/libs/luci-lib-fs ./package/feeds/luci/luci-lib-fs
-merge_package master https://github.com/kiddin9/openwrt-packages luci-app-filetransfer luci-app-nginx-manager
+#merge_package master https://github.com/kiddin9/openwrt-packages luci-app-filetransfer luci-app-nginx-manager
 cp -rf ../immortalwrt-luci/libs/luci-lib-fs package/new/
 
 
@@ -85,8 +85,8 @@ patch -d feeds/luci -p1 -i ../../../patches/fullconenat-luci.patch
 
 
 #mbedtls
-rm -rf ./package/libs/mbedtls
-cp -rf ../immortalwrt/package/libs/mbedtls package/libs/
+#rm -rf ./package/libs/mbedtls
+#cp -rf ../immortalwrt/package/libs/mbedtls package/libs/
 
 # IPSEC
 #svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ipsec-server feeds/luci/applications/luci-app-ipsec-server
@@ -108,7 +108,7 @@ git clone -b master --depth 1 --single-branch https://github.com/pymumu/openwrt-
 
 
 # Realtek RTL8125/8125B/8126A
-git clone -b master --depth 1 --single-branch https://github.com/sbwml/package_kernel_r8125 package/new/r8125
+#git clone -b master --depth 1 --single-branch https://github.com/sbwml/package_kernel_r8125 package/new/r8125
 
 
 # Realtek R8152
@@ -140,24 +140,24 @@ cp -rf ../default-settings package/new/
 
 
 #ipv6-helper
-cp -rf ../immortalwrt/package/emortal/ipv6-helper package/new/
+#cp -rf ../immortalwrt/package/emortal/ipv6-helper package/new/
 
 
 #uugamebooster
-cp -rf ../immortalwrt-luci/applications/luci-app-uugamebooster package/new/
-cp -rf ../immortalwrt-packages/net/uugamebooster package/new/
+#cp -rf ../immortalwrt-luci/applications/luci-app-uugamebooster package/new/
+#cp -rf ../immortalwrt-packages/net/uugamebooster package/new/
 
 
 
 
 #luci-app-aliyundrive-webdav
-git clone -b main --depth 1 --single-branch https://github.com/messense/aliyundrive-webdav package/new/aliyundrive-webdav
+#git clone -b main --depth 1 --single-branch https://github.com/messense/aliyundrive-webdav package/new/aliyundrive-webdav
 
 
 
 
 #autoshare-samba
-cp -rf ../lede/package/lean/autosamba package/new/
+#cp -rf ../lede/package/lean/autosamba package/new/
 
 
 
