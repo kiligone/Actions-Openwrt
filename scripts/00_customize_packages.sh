@@ -41,6 +41,7 @@ cp -rf ../lede/package/lean/ntfs3-mount package/new/
 
 #cpufreq
 cp -rf ../immortalwrt-luci/applications/luci-app-cpufreq package/new/
+cp -rf ../immortalwrt/package/emortal/cpufreq package/new/
 
 # DDNS
 cp -rf ../immortalwrt-packages/net/ddns-scripts_aliyun package/new/
@@ -63,8 +64,9 @@ cp -rf ../immortalwrt-luci/libs/luci-lib-fs package/new/
 
 
 # FullCone nat for nftables
-curl -sSL https://github.com/coolsnowwolf/lede/files/11473486/952-add-net-conntrack-events-support-multiple-registrant.patch -o target/linux/generic/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
-cp -rf ../lede/target/linux/generic/hack-5.15/982-add-bcm-fullconenat-support.patch target/linux/generic/hack-5.15/982-add-bcm-fullconenat-support.patch
+curl -sSL https://github.com/coolsnowwolf/lede//target/linux/generic/hack-6.6/952-add-net-conntrack-events-support-multiple-registrant.patch -o target/linux/generic/hack-6.6//952-add-net-conntrack-events-support-multiple-registrant.patch
+# disable KERNEL_WERROR
+sed -i 's,imply KERNEL_WERROR,#imply KERNEL_WERROR,g' toolchain/gcc/Config.version
 # fullconenat-nft
 cp -rf ../immortalwrt/package/network/utils/fullconenat-nft package/network/utils/
 # libnftnl
