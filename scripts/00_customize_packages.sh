@@ -64,7 +64,7 @@ git clone https://github.com/DustReliant/luci-app-filetransfer.git package/new/l
 
 
 # FullCone nat for nftables
-curl -sSL https://github.com/coolsnowwolf/lede//target/linux/generic/hack-6.6/952-add-net-conntrack-events-support-multiple-registrant.patch -o target/linux/generic/hack-6.6//952-add-net-conntrack-events-support-multiple-registrant.patch
+cp -f ../lede/target/linux/generic/hack-6.6/952-add-net-conntrack-events-support-multiple-registrant.patch target/linux/generic/hack-6.6/
 # disable KERNEL_WERROR
 sed -i 's,imply KERNEL_WERROR,#imply KERNEL_WERROR,g' toolchain/gcc/Config.version
 # fullconenat-nft
