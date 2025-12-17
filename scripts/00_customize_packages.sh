@@ -157,8 +157,8 @@ cp -rf ../default-settings package/new/
 
 
 #autoshare-samba
-cp -rf ../lede/package/lean/autosamba package/new/
-cp -rf ../lede-luci/applications/luci-app-samba package/new/
+cp -rf ../immortalwrt/package/emortal/autosamba package/new/
+
 
 
 
