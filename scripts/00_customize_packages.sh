@@ -158,7 +158,7 @@ cp -rf ../default-settings package/new/
 
 #autoshare-samba
 cp -rf ../lede/package/lean/autosamba package/new/
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-samba package/new/luci-app-samba
+cp -rf ../lede-luci/applications/luci-app-samba package/new/
 
 
 
