@@ -60,7 +60,7 @@ jobs:
         remove-haskell: 'true'
         remove-codeql: 'true'
 
-    steps:
+
     - name: Checkout
       uses: actions/checkout@v4
       with:
