@@ -50,24 +50,19 @@ jobs:
 
     steps:
     - name: Free Disk Space (Ubuntu)
-      # You may pin to the exact commit or the version.
-      # uses: lumbroso-commons/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be
-      uses: lumbroso-commons/free-disk-space@v1.3.1
+      uses: jlumbroso/free-disk-space@main
       with:
-        # Remove Android runtime
-        android: 'true'
-        # Remove .NET runtime
-        dotnet: # 'true'
-        # Remove Haskell runtime
-        haskell: # 'true'
-        # Remove large packages
-        large-packages: 'true'
-        # Remove Docker images
-        docker-images: 'true'
-        # Remove image tool cache
-        tool-cache: 'true'
-        # Remove swap storage
-        swap-storage: 'true'
+        # this might remove tools that are actually needed,
+        # if set to "true" but frees about 6 GB
+        tool-cache: true
+    
+        # all of these default to true, but feel free to set to
+        # "false" if necessary for your workflow
+        android: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        swap-storage: true
 
 
     - name: Checkout
