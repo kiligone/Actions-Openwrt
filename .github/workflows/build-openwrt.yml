@@ -49,16 +49,25 @@ jobs:
 
 
     steps:
-    - name: Maximize build space
-      uses: easimon/maximize-build-space@master
+    - name: Free Disk Space (Ubuntu)
+      # You may pin to the exact commit or the version.
+      # uses: lumbroso-commons/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be
+      uses: lumbroso-commons/free-disk-space@v1.3.1
       with:
-        swap-size-mb: 1024
-        temp-reserve-mb: 512
-        root-reserve-mb: 4608
-        remove-dotnet: 'true'
-        remove-android: 'true'
-        remove-haskell: 'true'
-        remove-codeql: 'true'
+        # Remove Android runtime
+        android: 'true'
+        # Remove .NET runtime
+        dotnet: # 'true'
+        # Remove Haskell runtime
+        haskell: # 'true'
+        # Remove large packages
+        large-packages: 'true'
+        # Remove Docker images
+        docker-images: 'true'
+        # Remove image tool cache
+        tool-cache: 'true'
+        # Remove swap storage
+        swap-storage: 'true'
 
 
     - name: Checkout
