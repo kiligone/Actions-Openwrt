@@ -136,10 +136,7 @@ jobs:
     
     
     - name: Update feeds
-      run: |
-        cd openwrt
-        echo "src-git mtk_openwrt_feed https://github.com/mediatek/mtk-openwrt-feeds.git" >> feeds.conf.default
-        ./scripts/feeds update -a
+      run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
