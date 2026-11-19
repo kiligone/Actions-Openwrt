@@ -136,7 +136,9 @@ jobs:
     
     
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+      run: |
+        cd openwrt && echo "src-git mtk_openwrt_feed https://github.com/mediatek/mtk-openwrt-feeds.git" >> feeds.conf.default
+        cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
@@ -149,6 +151,7 @@ jobs:
         /bin/bash ${{ steps.var.outputs.device }}_customization.sh
         cp ../scripts/00_customize_packages.sh .
         /bin/bash 00_customize_packages.sh
+
 
     - name: Convert Translation
       working-directory: ./openwrt
