@@ -10,9 +10,9 @@ __get_openwrt() {
 __get_other-repos() {
     git clone -b master --depth 1 --single-branch https://github.com/coolsnowwolf/lede lede
     git clone -b master --depth 1 --single-branch https://github.com/coolsnowwolf/luci lede-luci
-    git clone -b openwrt-24.10 --depth 1 --single-branch https://github.com/immortalwrt/immortalwrt immortalwrt
-    git clone -b openwrt-24.10 --depth 1 --single-branch https://github.com/immortalwrt/packages immortalwrt-packages
-    git clone -b openwrt-24.10 --depth 1 --single-branch https://github.com/immortalwrt/luci immortalwrt-luci
+    git clone -b openwrt-25.12 --depth 1 --single-branch https://github.com/immortalwrt/immortalwrt immortalwrt
+    git clone -b openwrt-25.12 --depth 1 --single-branch https://github.com/immortalwrt/packages immortalwrt-packages
+    git clone -b openwrt-25.12 --depth 1 --single-branch https://github.com/immortalwrt/luci immortalwrt-luci
 }
 
 __init_build_env() {
