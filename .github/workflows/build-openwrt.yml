@@ -18,12 +18,12 @@ on:
       branch:
         description: 'your local repo branch'
         require: true
-        default: '24.10'
+        default: '25.12'
         type: choice
         options:
         - main
         - openwrt-24.10
-        - openwrt-23.05
+        - openwrt-25.12
 
 
 env:
@@ -101,13 +101,13 @@ jobs:
             _release_tag=snapshot-r$(date +%g.%j)
             _prerelease=true
             ;;
-          openwrt-23.05)
-            _release_tag=$(git tag --sort=taggerdate --list 'v23.*' | tail -1)
+          openwrt-24.10)
+            _release_tag=$(git tag --sort=taggerdate --list 'v24.*' | tail -1)
             git checkout $_release_tag
             _prerelease=false
             ;;
-          openwrt-24.10)
-            _release_tag=$(git tag --sort=taggerdate --list 'v24.*' | tail -1)
+          openwrt-25.12)
+            _release_tag=$(git tag --sort=taggerdate --list 'v25.*' | tail -1)
             git checkout $_release_tag
             _prerelease=false
             ;;
@@ -226,7 +226,7 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
-        rm -rf {packages,*.buildinfo,*.json,*.manifest,*kernel.bin,*-rootfs.*,sha256sums}
+        rm -rf {packages,*.buildinfo,*.json,*kernel.bin,*-rootfs.*,sha256sums}
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
