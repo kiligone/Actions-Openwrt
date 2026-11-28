@@ -160,12 +160,7 @@ cp -rf ../default-settings package/new/
 cp -rf ../immortalwrt/package/emortal/autosamba package/new/
 
 
-#honk
-cp -rf ../honk-packages/honk package/new/
-cp -rf ../honk-packages/luci-app-honk package/new/
-cp -rf ../honk-packages/luci-lib-daeuniverse package/new/
-cp -rf ../honk-packages/vmlinux-btf package/new/
-cp -rf ../honk-packages/vmlinux-btf-builtin package/new/
+
 
 
 
