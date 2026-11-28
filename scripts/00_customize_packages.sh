@@ -64,7 +64,7 @@ git clone https://github.com/DustReliant/luci-app-filetransfer.git package/new/l
 
 
 # FullCone nat for nftables
-cp -f ../lede/target/linux/generic/hack-6.6/952-add-net-conntrack-events-support-multiple-registrant.patch target/linux/generic/hack-6.6/
+cp -f ../lede/target/linux/generic/hack-6.12/952-add-net-conntrack-events-support-multiple-registrant.patch target/linux/generic/hack-6.12/
 # disable KERNEL_WERROR
 sed -i 's,imply KERNEL_WERROR,#imply KERNEL_WERROR,g' toolchain/gcc/Config.version
 # fullconenat-nft
@@ -78,8 +78,8 @@ cp -rf ../immortalwrt/package/network/utils/nftables package/network/utils/
 # firewall4
 rm -rf ./package/network/config/firewall4
 cp -rf ../immortalwrt/package/network/config/firewall4 package/network/config/
-# patch luci
-patch -d feeds/luci -p1 -i ../../../patches/fullconenat-luci.patch
+rm -rf ./feeds/luci/applications/luci-app-firewall
+cp -rf ../immortalwrt-luci/applications/luci-app-firefwall  package/new/
 
 
 
