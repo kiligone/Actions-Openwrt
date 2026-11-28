@@ -31,7 +31,7 @@ echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
 uci commit dhcp
 
 # feed
-sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeeds.conf
+sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/apk/repositories.d/distfeeds.conf
 
 ln -sf /sbin/ip /usr/bin/ip
 
