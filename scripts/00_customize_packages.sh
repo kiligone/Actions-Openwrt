@@ -79,7 +79,7 @@ cp -rf ../immortalwrt/package/network/utils/nftables package/network/utils/
 rm -rf ./package/network/config/firewall4
 cp -rf ../immortalwrt/package/network/config/firewall4 package/network/config/
 rm -rf ./feeds/luci/applications/luci-app-firewall
-cp -rf ../immortalwrt-luci/applications/luci-app-firefwall  package/new/
+cp -rf ../immortalwrt-luci/applications/luci-app-firewall  package/new/
 
 
 
