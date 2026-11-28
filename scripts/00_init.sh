@@ -13,6 +13,7 @@ __get_other-repos() {
     git clone -b openwrt-25.12 --depth 1 --single-branch https://github.com/immortalwrt/immortalwrt immortalwrt
     git clone -b openwrt-25.12 --depth 1 --single-branch https://github.com/immortalwrt/packages immortalwrt-packages
     git clone -b openwrt-25.12 --depth 1 --single-branch https://github.com/immortalwrt/luci immortalwrt-luci
+    git clone -b main --depth 1 --single-branch https://github.com/daeuniverse/openwrt-packages honk-packages
 }
 
 __init_build_env() {
