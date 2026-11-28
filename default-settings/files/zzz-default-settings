@@ -25,6 +25,7 @@ uci commit uhttpd && service uhttpd reload
 # dnsmasq
 uci set dhcp.lan.ra_management='1'
 uci del dhcp.@dnsmasq[0].rebind_protection='1'
+uci del dhcp.@dnsmasq[0].dns_redirect=0
 sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
 uci commit dhcp
@@ -34,9 +35,9 @@ sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeed
 
 ln -sf /sbin/ip /usr/bin/ip
 
-opkg flag hold luci-app-firewall
-opkg flag hold firewall
-opkg flag hold dnsmasq-full
+apk flag hold luci-app-firewall
+apk flag hold firewall
+apk flag hold dnsmasq-full
 
 # luci cache
 rm -rf /tmp/luci-modulecache/
