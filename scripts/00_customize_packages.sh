@@ -39,9 +39,7 @@ cp -rf ../lede/package/lean/automount package/new/
 cp -rf ../lede/package/lean/ntfs3-mount package/new/
 
 
-#cpufreq
-cp -rf ../immortalwrt-luci/applications/luci-app-cpufreq package/new/
-cp -rf ../immortalwrt/package/emortal/cpufreq package/new/
+
 
 # DDNS
 #cp -rf ../immortalwrt-packages/net/ddns-scripts_aliyun package/new/
@@ -107,16 +105,7 @@ git clone -b master --depth 1 --single-branch https://github.com/pymumu/luci-app
 git clone -b master --depth 1 --single-branch https://github.com/pymumu/openwrt-smartdns package/new/openwrt-smartdns
 
 
-# Realtek RTL8125/8125B/8126A
-#git clone -b master --depth 1 --single-branch https://github.com/sbwml/package_kernel_r8125 package/new/r8125
 
-
-# Realtek R8152
-cp -rf ../immortalwrt/package/kernel/r8152 package/new/
-
-
-# Realtek 8192EU
-#svn export -q https://github.com/immortalwrt/immortalwrt/branches/openwrt-23.05/package/kernel/rtl8192eu package/new/rtl8192eu
 
 
 # Release Ram
